@@ -1,0 +1,29 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+nav{
+  background-color: rgba(241, 70, 136, 0.98);
+  font-size: 30px;
+}
+nav ul{
+  display: flex;
+  justify-content: center;
+}
+nav li{
+  list-style: none;
+  margin-left: 20px;
+
+}
+nav a{
+  text-decoration: none;
+}
+nav a.active-link{
+  color: rgb(3, 3, 3);
+}
+
+footer{
+  background-color: rgba(241, 70, 136, 0.98);
+}
