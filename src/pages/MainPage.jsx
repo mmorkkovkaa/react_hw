@@ -1,4 +1,5 @@
 import { useEffect, useState} from "react";
+import {Link} from "react-router-dom";
 import axios from "axios";
 
 const MainPage =()=>{
@@ -6,8 +7,8 @@ const MainPage =()=>{
 
     useEffect(()=>{
         const getPost = async ()=>{
-            const response = await axios.get('https://dummyjson.com/posts')
-            setPosts(response.data.posts)
+            const response = await axios.get('https://jsonplaceholder.typicode.com/posts')
+            setPosts(response.data)
         }
         getPost()
 
@@ -19,7 +20,9 @@ const MainPage =()=>{
             {posts.map((post) => (
                 <div key={post.id}>
                     <h4>{post.id}</h4>
-                    <p>{post.title}</p>
+                    <hr/>
+                    <Link to={`/posts/${post.id}/`}>{post.title}</Link>
+                    <hr/>
                     <i>{post.body}</i>
                 </div>
             ))}
